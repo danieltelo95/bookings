@@ -7,6 +7,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 const Home = () => {
 
   const [value, setValue] = React.useState(dayjs('2022-04-17T15:30'));
+  console.log("Fecha y hora: ", value);
 
   return (
     <div>
@@ -16,7 +17,7 @@ const Home = () => {
             label="Controlled picker"
             value={value}
             onChange={(newValue) => setValue(newValue)}
-          />
+            />
         </LocalizationProvider>
     </div>
   )
