@@ -3,7 +3,7 @@ import { Box, TextField, Button, Grid, Link } from '@mui/material';
 
 
 
-const Sign_up_form = ({ onSubmit }) => {
+const Sign_in_form = ({ onSubmit }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -39,7 +39,7 @@ const Sign_up_form = ({ onSubmit }) => {
         fullWidth
         variant="contained"
       >
-        Registrarme
+        Iniciar sesión
       </Button>
       <Grid container>
         <Grid item xs>
@@ -49,7 +49,7 @@ const Sign_up_form = ({ onSubmit }) => {
         </Grid>
         <Grid item>
           <Link href="#" variant="body2">
-            {"Ya tienes cuenta? Inicia sesión"}
+            {"No tienes cuenta? Regístrate"}
           </Link>
         </Grid>
       </Grid>
@@ -58,4 +58,4 @@ const Sign_up_form = ({ onSubmit }) => {
 
 }
 
-export default Sign_up_form;
+export default Sign_in_form;

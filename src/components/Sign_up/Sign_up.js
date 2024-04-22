@@ -10,7 +10,7 @@ import { getAuth, createUserWithEmailAndPassword} from "firebase/auth"
 
 const defaultTheme = createTheme();
 
-const SignInSide = () => {
+const SignUpSide = () => {
 
     const handleSubmit = async (email, password) => {
         const auth = getAuth();
@@ -51,5 +51,5 @@ const SignInSide = () => {
     )
 }
 
-export default SignInSide;
+export default SignUpSide;
 

@@ -1,4 +1,4 @@
-import SignInSide from "./components/Sign_up/Sign_up";
+import SignUpSide from "./components/Sign_up/Sign_up";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -14,7 +14,8 @@ function App() {
       <div >
         <Header/>
         <Routes>
-          <Route path="sign-up" element={<SignInSide />} />
+          {/* <Route path="sign-in" element={<SignInSide />} /> */}
+          <Route path="sign-up" element={<SignUpSide />} />
           <Route path="/" element={<Home/>} />
         </Routes>
       </div>
