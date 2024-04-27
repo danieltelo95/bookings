@@ -1,25 +1,42 @@
 import React from "react";
 import Sign_up_form from "./Sign_up_form";
-import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
+import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { getAuth, createUserWithEmailAndPassword} from "firebase/auth"
+import { doc, setDoc, getFirestore} from 'firebase/firestore';
 
 const defaultTheme = createTheme();
 
 const SignUpSide = () => {
 
-    const handleSubmit = async (email, password) => {
+    const handleSubmit = async (email, password, isAdmin) => {
         const auth = getAuth();
 
         try{
+            //Crear usuario en Firebase Authentication
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            // Usuario creado exitosamente
             const user = userCredential.user;
+
+            //Crear documento de usuario en Firestore
+            const db = getFirestore();
+            const userDocRef = doc(db, 'usuarios', user.uid);
+
+            //Guardar informacion del usuario en Firestore
+            await setDoc(userDocRef, {
+                nombre: "",
+                correo: email,
+                isAdmin: isAdmin
+            });
+
             console.log('Usuario creado: ', user);
+            console.log('Es admin: ', isAdmin);
+            console.log(userDocRef);
+
+
         } catch(error){
             const errorCode = error.code;
             const errorMessage = error.message;
