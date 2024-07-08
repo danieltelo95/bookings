@@ -13,8 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import logo from '../../assets/images/ajugarlogo.png'
 
-const pages = ['Canchas', 'Pricing', 'Blog'];
-const settings = ['Perfil', 'Cuenta', 'Cerrar sesión'];
+const pages = ['Canchas'];
+const settings = ['Iniciar sesión', 'Cuenta',];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

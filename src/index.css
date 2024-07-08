@@ -3,14 +3,22 @@
   padding: 0;
 }
 
-body {
-
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  @font-face {
+    font-family: 'Editorial_Today_Extrabold';
+    src: url('../src/assets/fonts/editorial-today.extrabold.ttf') format('truetype'),
+         url('../src/assets/fonts/editorial-today.extrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Editorial_Today_Regular';
+    src: url('../src/assets/fonts/editorial-today.regular.ttf') format('truetype'),
+         url('../src/assets/fonts/editorial-today.regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
