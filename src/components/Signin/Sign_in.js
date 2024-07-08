@@ -9,7 +9,6 @@ import Paper from '@mui/material/Paper';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import backgroundImage from '../../assets/images/camp_nou.jpg'
-import { blueGrey, red } from "@mui/material/colors";
 
 const defaultTheme = createTheme();
 
