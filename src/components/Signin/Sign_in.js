@@ -8,11 +8,14 @@ import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom"
 import backgroundImage from '../../assets/images/camp_nou.jpg'
 
 const defaultTheme = createTheme();
 
 const LoginForm = () => {
+
+    const navigate = useNavigate()
 
     const handleSubmit = async (email, password) => {
         const auth = getAuth();
@@ -20,6 +23,7 @@ const LoginForm = () => {
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             const user = userCredential.user
+            navigate('/');
             console.log('Inicio de sesión exitoso: ', user);
         } catch (error) {
             const errorCode = error.code;
@@ -28,7 +32,6 @@ const LoginForm = () => {
         }
     };
     
-
     return (    
         <ThemeProvider theme={defaultTheme}>
 

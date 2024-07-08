@@ -7,12 +7,14 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { getAuth, createUserWithEmailAndPassword} from "firebase/auth"
+import { Navigate, useNavigate } from "react-router-dom";
 import { doc, setDoc, getFirestore} from 'firebase/firestore';
 
 const defaultTheme = createTheme();
 
 const SignUpSide = () => {
-
+    
+    const navigate = useNavigate()
     const handleSubmit = async (email, password, isAdmin) => {
         const auth = getAuth();
 
@@ -32,6 +34,7 @@ const SignUpSide = () => {
                 isAdmin: isAdmin
             });
 
+            navigate('/')
             console.log('Usuario creado: ', user);
             console.log('Es admin: ', isAdmin);
             console.log(userDocRef);
