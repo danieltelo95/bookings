@@ -13,6 +13,15 @@ const settings = [
   {name: 'Iniciar sesión', path: '/sign-in'},
   {name: 'Registrarse', path: '/sign-up'}
 ];
+const settingsAdmin = [
+  {name: 'Panel de control', path: '#'},
+  {name: 'Cerrar sesión', path: '#'}
+];
+const settingsRegularUser = [
+  {name: 'Mis reservas', path: '#'},
+  {name: 'Perfil', path: '#'},
+  {name: 'Cerrar sesión', path: '#'}
+];
 
 const ResponsiveAppBar = () => {
 

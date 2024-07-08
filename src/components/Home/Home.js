@@ -8,7 +8,6 @@ import { Container, Typography, Box } from '@mui/material';
 
 const Home = () => {
   const [value, setValue] = React.useState(dayjs('2022-04-17T15:30'));
-  console.log("Fecha y hora: ", value);
 
   return (
     <div
